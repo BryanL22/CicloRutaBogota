@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CicloRuta Bogotá: app con el mapa de la Ciclovía y las ciclorrutas de Bogotá</title>
+<meta name="description" content="App gratis para Android con el mapa de la Ciclovía de Bogotá (127,7 km), la red de ciclorrutas y los cierres de la semana del IDRD. Sin registro y funciona sin señal.">
+<link rel="canonical" href="https://bryanl22.github.io/CicloRutaBogota/">
+<meta name="theme-color" content="#FFD243">
+<meta name="color-scheme" content="light dark">
+<!-- Verificación de Google Search Console: quita el comentario y pega tu código -->
+<!-- <meta name="google-site-verification" content="PEGA_AQUI_TU_CODIGO"> -->
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="CicloRuta Bogotá">
+<meta property="og:title" content="CicloRuta Bogotá: el mapa de la Ciclovía y las ciclorrutas">
+<meta property="og:description" content="La Ciclovía de domingos y festivos, las ciclorrutas permanentes y los cierres de la semana en una app gratis para Android. Sin registro.">
+<meta property="og:url" content="https://bryanl22.github.io/CicloRutaBogota/">
+<meta property="og:image" content="https://bryanl22.github.io/CicloRutaBogota/assets/og-imagen.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo de CicloRuta Bogotá junto a la pantalla del mapa de la Ciclovía">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/archivo.woff2" as="font" type="font/woff2" crossorigin>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://bryanl22.github.io/CicloRutaBogota/#sitio",
+      "url": "https://bryanl22.github.io/CicloRutaBogota/",
+      "name": "CicloRuta Bogotá",
+      "inLanguage": "es-CO"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://bryanl22.github.io/CicloRutaBogota/#l22apps",
+      "name": "L22 Apps",
+      "url": "https://bryanl22.github.io/CicloRutaBogota/",
+      "email": "dxcbryan22@gmail.com"
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://bryanl22.github.io/CicloRutaBogota/#app",
+      "name": "CicloRuta Bogotá",
+      "alternateName": "CicloRuta",
+      "description": "App gratuita para Android que muestra en un mapa la Ciclovía de Bogotá de domingos y festivos (127,7 km), la red de ciclorrutas permanentes y las novedades semanales del IDRD: cierres, desvíos, eventos y puntos de servicio. No requiere registro y guarda el mapa para consultarlo sin conexión.",
+      "operatingSystem": "Android",
+      "applicationCategory": "TravelApplication",
+      "inLanguage": "es-CO",
+      "url": "https://bryanl22.github.io/CicloRutaBogota/",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.ciclorutabogota.app",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.ciclorutabogota.app",
+      "sameAs": ["https://play.google.com/store/apps/details?id=com.ciclorutabogota.app"],
+      "image": "https://bryanl22.github.io/CicloRutaBogota/assets/logo-512.png",
+      "screenshot": [
+        "https://bryanl22.github.io/CicloRutaBogota/assets/pantalla-ciclovia.webp",
+        "https://bryanl22.github.io/CicloRutaBogota/assets/pantalla-cicloruta.webp",
+        "https://bryanl22.github.io/CicloRutaBogota/assets/pantalla-novedades.webp",
+        "https://bryanl22.github.io/CicloRutaBogota/assets/pantalla-planear.webp",
+        "https://bryanl22.github.io/CicloRutaBogota/assets/pantalla-recorrido.webp"
+      ],
+      "featureList": [
+        "Mapa de la Ciclovía de Bogotá de domingos y festivos",
+        "Mapa de la red de ciclorrutas permanentes",
+        "Novedades semanales del IDRD: cierres, desvíos, eventos y servicios",
+        "Planeador de rutas por ciclovía y ciclorruta",
+        "Modo recorrido con tiempo, distancia y velocidad",
+        "Puntos cercanos: hidratación, CAI, ciclotalleres y cicloparqueaderos",
+        "Uso sin registro",
+        "Mapa guardado para consultar sin conexión"
+      ],
+      "spatialCoverage": { "@type": "Place", "name": "Bogotá, Colombia" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "COP" },
+      "author": { "@id": "https://bryanl22.github.io/CicloRutaBogota/#l22apps" },
+      "publisher": { "@id": "https://bryanl22.github.io/CicloRutaBogota/#l22apps" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bryanl22.github.io/CicloRutaBogota/#preguntas",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿Qué es CicloRuta Bogotá?", "acceptedAnswer": { "@type": "Answer", "text": "Es una app gratuita para Android que muestra en un mapa la Ciclovía de Bogotá, la red de ciclorrutas permanentes y las novedades de la semana que publica el IDRD: cierres, desvíos, eventos y puntos de servicio." } },
+        { "@type": "Question", "name": "¿Cuál es el horario de la Ciclovía de Bogotá?", "acceptedAnswer": { "@type": "Answer", "text": "La Ciclovía funciona los domingos y festivos de 7:00 a. m. a 2:00 p. m. Algunos festivos no hay jornada, como el 1 de enero. En la pantalla principal de la app ves si la Ciclovía opera hoy." } },
+        { "@type": "Question", "name": "¿Cuántos kilómetros tiene la Ciclovía de Bogotá?", "acceptedAnswer": { "@type": "Answer", "text": "El circuito tiene unos 127,7 km por las principales vías de la ciudad. La app lo muestra completo, tramo por tramo." } },
+        { "@type": "Question", "name": "¿Tengo que crear una cuenta para usar la app?", "acceptedAnswer": { "@type": "Answer", "text": "No. Abres la app y el mapa ya está ahí, en modo invitado. No pide correo ni contraseña." } },
+        { "@type": "Question", "name": "¿La app funciona sin internet?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, con lo último que descargó. La app guarda el mapa y te indica hace cuánto se actualizó. Los cierres más recientes aparecen cuando vuelves a tener conexión." } },
+        { "@type": "Question", "name": "¿CicloRuta Bogotá es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La app es gratuita y se sostiene con anuncios." } },
+        { "@type": "Question", "name": "¿Hay versión para iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Por ahora solo está disponible para Android, en Google Play." } },
+        { "@type": "Question", "name": "¿Es la app oficial del IDRD?", "acceptedAnswer": { "@type": "Answer", "text": "No. CicloRuta Bogotá es una app independiente desarrollada por L22 Apps. Usa información pública del IDRD, la entidad que administra la Ciclovía." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+@font-face {
+  font-family: "Archivo";
+  src: url("assets/archivo.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Colores tomados del logo */
+  --sol-alto: #FFD243;
+  --sol: #F8C21A;
+  --rojo: #D81F3E;
+  --carmin: #C8102E;
+  --carmin-hondo: #A50D26;
+  --vino: #7B0C1D;
+  --vino-hondo: #5E0915;
+  --bisel: #2A0B12;
+  --tinta: #3D0A14;
+  --sobre-vino: #FFFFFF;
+  --sobre-vino-suave: rgba(255, 255, 255, 0.76);
+
+  /* Superficies neutras (cambian con el modo oscuro) */
+  --papel: #FFFFFF;
+  --texto: #3D0A14;
+  --texto-suave: #744D54;
+  --linea: #EEDFE1;
+
+  --borde-boton: 14px;
+  --margen: clamp(20px, 5vw, 48px);
+  --ancho: 1160px;
+  --solape: clamp(96px, 11vw, 170px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papel: #1E1316;
+    --texto: #F6EAEB;
+    --texto-suave: #C9B0B4;
+    --linea: #3A272B;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--texto);
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-stretch: 100%;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; }
+p { margin: 0; }
+
+:focus-visible { outline: 3px solid var(--carmin); outline-offset: 3px; border-radius: 4px; }
+
+.saltar {
+  position: absolute; left: 12px; top: -60px;
+  background: var(--tinta); color: #fff; padding: 10px 14px; border-radius: 10px;
+  text-decoration: none; font-weight: 600; z-index: 10;
+}
+.saltar:focus { top: 12px; }
+
+.contenedor { width: min(var(--ancho), 100% - 2 * var(--margen)); margin-inline: auto; }
+
+/* ---------- Barra superior ---------- */
+.barra-fondo { background: var(--sol-alto); color: var(--tinta); }
+.barra {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-block: 18px;
+}
+.marca {
+  display: inline-flex; align-items: center; gap: 12px;
+  text-decoration: none; font-weight: 800; font-size: 1.15rem; font-stretch: 92%;
+  letter-spacing: -0.005em;
+}
+.marca img { width: 40px; height: 40px; border-radius: 10px; }
+.barra nav a {
+  font-weight: 600; font-size: 0.98rem; text-decoration: none;
+  border-bottom: 2px solid currentColor; padding-bottom: 2px;
+}
+
+/* ---------- Portada ---------- */
+.portada {
+  background:
+    linear-gradient(to top, var(--vino) 0 24px, transparent 24px),
+    linear-gradient(180deg, var(--sol-alto) 0%, var(--sol) 78%);
+  color: var(--tinta);
+  overflow: hidden;
+}
+.portada-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+  padding-top: clamp(24px, 5vw, 56px);
+}
+.portada-texto { padding-bottom: calc(var(--solape) * 0.55); }
+.portada h1 {
+  font-size: clamp(2.7rem, 6.4vw, 5.1rem);
+  font-weight: 850;
+  font-stretch: 70%;
+  line-height: 0.94;
+  letter-spacing: -0.012em;
+  max-width: 11ch;
+  text-wrap: balance;
+}
+.entrada {
+  margin-top: 24px;
+  max-width: 34rem;
+  font-size: clamp(1.06rem, 1.4vw, 1.2rem);
+  line-height: 1.55;
+}
+.acciones { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+.nota { font-size: 0.95rem; }
+
+.boton {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--carmin); color: #fff;
+  padding: 16px 24px; border-radius: var(--borde-boton);
+  font-weight: 700; font-size: 1.05rem; text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.boton:hover { background: var(--carmin-hondo); }
+.boton svg { width: 20px; height: 20px; flex: none; }
+
+.portada-tel {
+  justify-self: center;
+  position: relative; z-index: 2;
+  margin-bottom: calc(-1 * var(--solape));
+}
+.telefono {
+  background: var(--bisel);
+  padding: 7px;
+  border-radius: 34px;
+}
+.telefono img { border-radius: 27px; width: 100%; height: auto; aspect-ratio: 640 / 1220; }
+.portada .telefono {
+  width: clamp(250px, 26vw, 320px);
+  box-shadow: 0 34px 60px -26px rgba(61, 10, 20, 0.55);
+}
+
+/* Cerros orientales, como en el logo */
+.cerros {
+  position: relative; z-index: 1;
+  display: block; width: 100%;
+  height: clamp(130px, 16.7vw, 280px);
+  margin-bottom: -1px;
+}
+.ruta-punteada { fill: none; stroke: #fff; stroke-linecap: round; }
+.ruta-escritorio .ruta-punteada { stroke-width: 7; stroke-dasharray: 0 16; }
+.ruta-movil .ruta-punteada { stroke-width: 12; stroke-dasharray: 0 26; }
+.ruta-movil { display: none; }
+.mascara-trazo {
+  fill: none; stroke: #fff; stroke-width: 60;
+  stroke-dasharray: 1 1; stroke-dashoffset: 1;
+  animation: trazar 1.5s cubic-bezier(.45, .05, .25, 1) 0.35s forwards;
+}
+@keyframes trazar { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .mascara-trazo { animation: none; stroke-dashoffset: 0; }
+}
+
+/* ---------- Pantallas ---------- */
+.pantallas {
+  background: var(--vino);
+  color: var(--sobre-vino);
+  padding-bottom: clamp(64px, 9vw, 112px);
+}
+.pantallas :focus-visible { outline-color: var(--sol-alto); }
+.llegada {
+  display: flex; flex-direction: column; align-items: center;
+  padding-bottom: 20px;
+}
+.llegada::before {
+  content: "";
+  width: 7px; height: 44px;
+  background-image: radial-gradient(circle, #fff 3.2px, transparent 3.6px);
+  background-size: 7px 16px;
+  background-position: center 8px;
+  background-repeat: repeat-y;
+}
+.parada-marca {
+  width: 24px; height: 24px; border-radius: 50%;
+  border: 4px solid #fff; background: var(--vino);
+  display: grid; place-items: center; flex: none;
+}
+.parada-marca::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #fff; }
+
+.pantallas h2 {
+  text-align: center;
+  font-size: clamp(2rem, 4.2vw, 3.1rem);
+  font-weight: 820; font-stretch: 74%;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.pantallas .intro {
+  text-align: center;
+  margin: 16px auto 0;
+  max-width: 34rem;
+  color: var(--sobre-vino-suave);
+}
+
+.paradas {
+  width: min(var(--ancho), 100% - 2 * var(--margen));
+  margin: clamp(40px, 6vw, 64px) auto 0;
+}
+.pista {
+  list-style: none; margin: 0; padding: 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+}
+.pista::before {
+  content: "";
+  position: absolute; left: 0; right: 0; top: 8.5px;
+  height: 7px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.85) 3.2px, transparent 3.6px);
+  background-size: 16px 7px;
+  background-repeat: repeat-x;
+}
+.parada { position: relative; display: flex; flex-direction: column; align-items: center; }
+.parada .telefono { width: 100%; max-width: 250px; margin-top: 22px; padding: 6px; border-radius: 30px; }
+.parada .telefono img { border-radius: 24px; }
+.parada h3 {
+  margin-top: 22px;
+  font-size: 1.3rem; font-weight: 750; font-stretch: 88%;
+  align-self: stretch;
+}
+.parada p {
+  margin-top: 6px;
+  color: var(--sobre-vino-suave);
+  font-size: 0.99rem; line-height: 1.55;
+  align-self: stretch;
+}
+
+.deslizar { display: none; margin-top: 18px; text-align: center; font-size: 0.92rem; color: var(--sobre-vino-suave); }
+
+/* ---------- En la calle ---------- */
+.calle { padding-block: clamp(72px, 10vw, 128px); }
+.calle-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+.calle h2, .preguntas h2 {
+  font-size: clamp(2rem, 4.2vw, 3.1rem);
+  font-weight: 820; font-stretch: 74%;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.calle-grid > div p { margin-top: 20px; max-width: 30rem; color: var(--texto-suave); font-size: 1.12rem; }
+.rasgos { margin: 0; }
+.rasgo { padding-block: 22px; border-top: 1px solid var(--linea); }
+.rasgo:last-child { border-bottom: 1px solid var(--linea); }
+.rasgo dt { font-weight: 750; font-size: 1.2rem; font-stretch: 90%; }
+.rasgo dd { margin: 4px 0 0; color: var(--texto-suave); max-width: 34rem; }
+
+/* ---------- Preguntas ---------- */
+.preguntas { padding-bottom: clamp(72px, 10vw, 128px); }
+.lista-preguntas, .preguntas h2 { max-width: 780px; }
+.lista-preguntas { margin-top: 32px; border-top: 1px solid var(--linea); }
+.lista-preguntas details { border-bottom: 1px solid var(--linea); }
+.lista-preguntas summary {
+  list-style: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  padding-block: 20px;
+  font-weight: 650; font-size: 1.12rem;
+}
+.lista-preguntas summary::-webkit-details-marker { display: none; }
+.lista-preguntas summary::after {
+  content: ""; flex: none; width: 14px; height: 14px;
+  background:
+    linear-gradient(currentColor, currentColor) center / 14px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 2px 14px no-repeat;
+  transition: transform 0.2s ease;
+}
+.lista-preguntas details[open] summary::after { transform: rotate(45deg); }
+@media (prefers-reduced-motion: reduce) { .lista-preguntas summary::after { transition: none; } }
+.lista-preguntas details p { padding-bottom: 22px; margin-top: -4px; color: var(--texto-suave); max-width: 40rem; }
+
+/* ---------- Cierre ---------- */
+.cierre {
+  background:
+    linear-gradient(to top, var(--vino) 0 24px, transparent 24px),
+    linear-gradient(180deg, var(--sol-alto) 0%, var(--sol) 100%);
+  color: var(--tinta);
+  text-align: center;
+  padding-top: clamp(64px, 9vw, 112px);
+}
+.cierre h2 {
+  font-size: clamp(2.3rem, 5.2vw, 3.9rem);
+  font-weight: 850; font-stretch: 70%;
+  line-height: 0.96;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+.cierre p { margin-top: 14px; font-size: 1.12rem; }
+.cierre .boton { margin-top: 28px; }
+.cierre .cerros { margin-top: clamp(24px, 4vw, 48px); height: clamp(110px, 12vw, 200px); }
+
+/* ---------- Pie ---------- */
+.pie {
+  background: var(--vino);
+  color: var(--sobre-vino-suave);
+  padding-block: 8px 40px;
+  font-size: 0.95rem;
+}
+.pie :focus-visible { outline-color: var(--sol-alto); }
+.pie-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px 40px; align-items: center; }
+.pie .marca { color: #fff; font-size: 1.05rem; }
+.pie .marca img { width: 34px; height: 34px; border-radius: 8px; }
+.pie nav { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.pie nav a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.45); }
+.pie nav a:hover { border-bottom-color: #fff; }
+.legal { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.16); max-width: 52rem; font-size: 0.88rem; line-height: 1.55; }
+
+/* ---------- Pantallas medianas y celulares ---------- */
+@media (max-width: 980px) {
+  .paradas {
+    width: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-inline: var(--margen);
+    scroll-padding-inline: var(--margen);
+  }
+  .paradas::-webkit-scrollbar { display: none; }
+  .pista { display: flex; gap: 24px; width: max-content; }
+  .parada { width: min(250px, 68vw); scroll-snap-align: start; }
+  .deslizar { display: block; }
+}
+
+@media (max-width: 860px) {
+  .portada-grid { grid-template-columns: 1fr; }
+  .portada-texto { padding-bottom: 0; }
+  .portada-tel { margin-top: 8px; }
+  .portada .telefono { width: min(270px, 72vw); }
+  .ruta-escritorio { display: none; }
+  .ruta-movil { display: inline; }
+  .calle-grid { grid-template-columns: 1fr; }
+  .barra nav { display: none; }
+}
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">Ir al contenido</a>
+
+<div class="barra-fondo">
+  <header class="barra contenedor">
+    <a class="marca" href="./" aria-label="CicloRuta Bogotá, inicio">
+      <img src="assets/logo-96.webp" width="40" height="40" alt="">
+      CicloRuta Bogotá
+    </a>
+    <nav aria-label="Secciones">
+      <a href="#preguntas">Preguntas frecuentes</a>
+    </nav>
+  </header>
+</div>
+
+<main id="contenido">
+  <section class="portada" aria-labelledby="titulo">
+    <div class="contenedor portada-grid">
+      <div class="portada-texto">
+        <h1 id="titulo">Mapa de la Ciclovía y las ciclorrutas de Bogotá</h1>
+        <p class="entrada">CicloRuta Bogotá es una app gratuita para Android con los 127,7&nbsp;km de la Ciclovía de domingos y festivos, la red de ciclorrutas permanentes y los cierres y eventos que publica el IDRD cada semana. Abre directo en el mapa, sin crear cuenta.</p>
+        <div class="acciones">
+          <a class="boton" href="https://play.google.com/store/apps/details?id=com.ciclorutabogota.app" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+            Descargar en Google Play
+          </a>
+          <p class="nota">Gratis para Android.</p>
+        </div>
+      </div>
+      <div class="portada-tel">
+        <div class="telefono">
+          <img src="assets/pantalla-ciclovia.webp" width="640" height="1220" fetchpriority="high"
+               alt="Pantalla principal de CicloRuta Bogotá con el trazado rojo de la Ciclovía sobre el mapa de Bogotá, el horario del día y la extensión de 127,7 km">
+        </div>
+      </div>
+    </div>
+
+    <svg class="cerros" viewBox="0 0 1440 240" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <defs>
+        <mask id="m-escritorio" maskUnits="userSpaceOnUse" x="0" y="-20" width="1440" height="280">
+          <path class="mascara-trazo" pathLength="1" d="M1045,-12 C1045,120 720,104 720,252"/>
+        </mask>
+        <mask id="m-movil" maskUnits="userSpaceOnUse" x="0" y="-20" width="1440" height="280">
+          <path class="mascara-trazo" pathLength="1" d="M720,-12 L720,252"/>
+        </mask>
+      </defs>
+      <path fill="#D81F3E" d="M0,122 L150,72 L330,138 L520,58 L700,128 L862,78 L1010,146 L1196,66 L1440,128 L1440,320 L0,320 Z"/>
+      <path fill="#7B0C1D" d="M0,190 L178,140 L362,198 L560,148 L758,208 L940,158 L1122,212 L1300,162 L1440,198 L1440,320 L0,320 Z"/>
+      <g class="ruta-escritorio" mask="url(#m-escritorio)">
+        <path class="ruta-punteada" d="M1045,-12 C1045,120 720,104 720,252"/>
+      </g>
+      <g class="ruta-movil" mask="url(#m-movil)">
+        <path class="ruta-punteada" d="M720,-12 L720,252"/>
+      </g>
+    </svg>
+  </section>
+
+  <section class="pantallas" aria-labelledby="t-pantallas">
+    <div class="llegada" aria-hidden="true"><span class="parada-marca"></span></div>
+    <div class="contenedor">
+      <h2 id="t-pantallas">Qué puedes hacer con la app</h2>
+      <p class="intro">Lo necesario para salir a rodar el domingo o para moverte entre semana por las ciclorrutas.</p>
+    </div>
+
+    <div class="paradas">
+      <ul class="pista">
+        <li class="parada">
+          <span class="parada-marca" aria-hidden="true"></span>
+          <div class="telefono">
+            <img src="assets/pantalla-cicloruta.webp" width="640" height="1220" loading="lazy"
+                 alt="Mapa de CicloRuta Bogotá con la red de ciclorrutas permanentes resaltada en dorado sobre las localidades de Bogotá">
+          </div>
+          <h3>Mapa</h3>
+          <p>Cambia entre la Ciclovía de domingos y festivos y la red de ciclorrutas permanentes, con tu ubicación en el mapa.</p>
+        </li>
+        <li class="parada">
+          <span class="parada-marca" aria-hidden="true"></span>
+          <div class="telefono">
+            <img src="assets/pantalla-novedades.webp" width="640" height="1220" loading="lazy"
+                 alt="Pantalla de Novedades con el boletín semanal del IDRD, filtros por alertas, eventos y servicios, y tarjetas con actividades en la Ciclovía">
+          </div>
+          <h3>Novedades</h3>
+          <p>Cierres, desvíos, eventos y puntos de servicio del boletín semanal del IDRD, filtrados por tipo.</p>
+        </li>
+        <li class="parada">
+          <span class="parada-marca" aria-hidden="true"></span>
+          <div class="telefono">
+            <img src="assets/pantalla-planear.webp" width="640" height="1220" loading="lazy"
+                 alt="Pantalla Planear ruta con campos de origen y destino y opciones para calcular por Ciclovía, ciclorruta o ambas">
+          </div>
+          <h3>Planear</h3>
+          <p>Elige origen y destino y calcula un recorrido por la Ciclovía, por ciclorrutas o por ambas.</p>
+        </li>
+        <li class="parada">
+          <span class="parada-marca" aria-hidden="true"></span>
+          <div class="telefono">
+            <img src="assets/pantalla-recorrido.webp" width="640" height="1220" loading="lazy"
+                 alt="Modo recorrido sobre el mapa de Bogotá con el tiempo, la distancia y la velocidad del viaje en curso">
+          </div>
+          <h3>Recorrido</h3>
+          <p>Mientras pedaleas, ves el tiempo, la distancia y la velocidad en vivo.</p>
+        </li>
+      </ul>
+    </div>
+    <p class="deslizar" aria-hidden="true">Desliza para ver más pantallas</p>
+  </section>
+
+  <section class="calle" aria-labelledby="t-calle">
+    <div class="contenedor calle-grid">
+      <div>
+        <h2 id="t-calle">Pensada para usarla en la calle</h2>
+        <p>Se abre parado en una esquina, con la bici en una mano y el celular en la otra. Por eso va directo a lo que necesitas.</p>
+      </div>
+      <dl class="rasgos">
+        <div class="rasgo">
+          <dt>Sin cuenta</dt>
+          <dd>Abre directo en el mapa. No te pide correo, contraseña ni registro.</dd>
+        </div>
+        <div class="rasgo">
+          <dt>Sin señal</dt>
+          <dd>Guarda el último mapa descargado y te dice hace cuánto se actualizó, para que sepas si puede faltar un cierre reciente.</dd>
+        </div>
+        <div class="rasgo">
+          <dt>Horario del día</dt>
+          <dd>Te muestra si la Ciclovía opera hoy y la extensión del circuito.</dd>
+        </div>
+        <div class="rasgo">
+          <dt>Puntos cercanos</dt>
+          <dd>Hidratación, CAI, ciclotalleres y cicloparqueaderos cerca de donde estás.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="preguntas" id="preguntas" aria-labelledby="t-preguntas">
+    <div class="contenedor">
+      <h2 id="t-preguntas">Preguntas frecuentes</h2>
+      <div class="lista-preguntas">
+        <details>
+          <summary>¿Qué es CicloRuta Bogotá?</summary>
+          <p>Es una app gratuita para Android que muestra en un mapa la Ciclovía de Bogotá, la red de ciclorrutas permanentes y las novedades de la semana que publica el IDRD: cierres, desvíos, eventos y puntos de servicio.</p>
+        </details>
+        <details>
+          <summary>¿Cuál es el horario de la Ciclovía de Bogotá?</summary>
+          <p>La Ciclovía funciona los domingos y festivos de 7:00 a. m. a 2:00 p. m. Algunos festivos no hay jornada, como el 1 de enero. En la pantalla principal de la app ves si la Ciclovía opera hoy.</p>
+        </details>
+        <details>
+          <summary>¿Cuántos kilómetros tiene la Ciclovía de Bogotá?</summary>
+          <p>El circuito tiene unos 127,7 km por las principales vías de la ciudad. La app lo muestra completo, tramo por tramo.</p>
+        </details>
+        <details>
+          <summary>¿Tengo que crear una cuenta para usar la app?</summary>
+          <p>No. Abres la app y el mapa ya está ahí, en modo invitado. No pide correo ni contraseña.</p>
+        </details>
+        <details>
+          <summary>¿La app funciona sin internet?</summary>
+          <p>Sí, con lo último que descargó. La app guarda el mapa y te indica hace cuánto se actualizó. Los cierres más recientes aparecen cuando vuelves a tener conexión.</p>
+        </details>
+        <details>
+          <summary>¿CicloRuta Bogotá es gratis?</summary>
+          <p>Sí. La app es gratuita y se sostiene con anuncios.</p>
+        </details>
+        <details>
+          <summary>¿Hay versión para iPhone?</summary>
+          <p>Por ahora solo está disponible para Android, en Google Play.</p>
+        </details>
+        <details>
+          <summary>¿Es la app oficial del IDRD?</summary>
+          <p>No. CicloRuta Bogotá es una app independiente desarrollada por L22 Apps. Usa información pública del IDRD, la entidad que administra la Ciclovía.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cierre" aria-labelledby="t-cierre">
+    <div class="contenedor">
+      <h2 id="t-cierre">Descárgala antes del domingo</h2>
+      <p>Es gratis y está en Google Play para Android.</p>
+      <a class="boton" href="https://play.google.com/store/apps/details?id=com.ciclorutabogota.app" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+        Descargar en Google Play
+      </a>
+    </div>
+    <svg class="cerros" viewBox="0 0 1440 240" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <path fill="#D81F3E" d="M0,122 L150,72 L330,138 L520,58 L700,128 L862,78 L1010,146 L1196,66 L1440,128 L1440,320 L0,320 Z"/>
+      <path fill="#7B0C1D" d="M0,190 L178,140 L362,198 L560,148 L758,208 L940,158 L1122,212 L1300,162 L1440,198 L1440,320 L0,320 Z"/>
+    </svg>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie-grid">
+      <a class="marca" href="./">
+        <img src="assets/logo-96.webp" width="34" height="34" alt="">
+        CicloRuta Bogotá
+      </a>
+      <nav aria-label="Enlaces del pie">
+        <a href="https://play.google.com/store/apps/details?id=com.ciclorutabogota.app" rel="noopener">Google Play</a>
+        <a href="privacy-policy.html">Política de privacidad</a>
+        <a href="mailto:dxcbryan22@gmail.com">Contacto</a>
+      </nav>
+    </div>
+    <p class="legal">CicloRuta Bogotá es una app independiente de L22 Apps, sin relación con el IDRD ni con la Alcaldía Mayor de Bogotá. La información de la Ciclovía proviene de fuentes públicas del IDRD. Mapas base © colaboradores de OpenStreetMap. © 2026 L22 Apps.</p>
+  </div>
+</footer>
+</body>
+</html>
